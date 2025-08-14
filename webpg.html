@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Runaway Button</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+            overflow: hidden;
+            cursor: none;
+        }
+        #runButton {
+            padding: 20px 40px;
+            font-size: 24px;
+            background: #ff5555;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            position: absolute;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <button id="runButton">CATCH ME IF YOU CAN</button>
+
+    <script>
+        const button = document.getElementById('runButton');
+        
+        button.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - 200);
+            const y = Math.random() * (window.innerHeight - 100);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
